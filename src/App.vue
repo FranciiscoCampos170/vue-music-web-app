@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <header>
-      My Music
+      <h3>
+        MusiKwanza
+      </h3>
     </header>
     <main>
       <section class="player">
@@ -9,14 +11,14 @@
           {{  current.title }} - <span>{{ current.artist}}</span>
         </h2>
         <div class="control">
-          <button @click="prev">Prev</button>
+          <button @click="prev"> Prev</button>
           <button v-if="!isPlaying" @click="play">Play</button>
           <button v-else @click="pause">Pause</button>
           <button @click="next">Next</button>
         </div>
       </section>
       <section class="playlist">
-        <h3>The Playlist</h3>
+        <h3>My Playlist</h3>
         <button v-for="song in songs" :key="song.src" @click="play(song)" :class="(song.src == current.src) ? 'song playing' : 'song'">
           {{song.title}} - {{song.artist}}
         </button>
@@ -106,5 +108,8 @@ export default {
 </script>
 
 <style>
-
+  *{
+    background-color:#2d3436;
+    color: #fff;
+  }
 </style>
